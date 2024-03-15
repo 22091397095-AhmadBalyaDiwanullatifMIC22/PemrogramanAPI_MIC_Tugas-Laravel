@@ -11,9 +11,9 @@ class createAddressTable extends Migration
      */
     public function up()
     {
-        Schema::create('address', function (Blueprint $table) {
-            $table->id_address();
-            $table->foreignId('id_contact')->constrained('contacts');
+        Schema::create('address_laravel', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('id_contact');
             $table->string('street_address');
             $table->string('city_address');
             $table->string('province_address');

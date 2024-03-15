@@ -11,8 +11,9 @@ class createUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('user', function (Blueprint $table) {
-            $table->id_user();
+
+        Schema::create('user_laravel', function (Blueprint $table) {
+            $table->id();
             $table->string('username_user')->unique();
             $table->string('password_user');
             $table->string('name_user');

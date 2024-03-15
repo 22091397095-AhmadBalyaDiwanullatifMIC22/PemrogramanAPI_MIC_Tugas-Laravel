@@ -11,11 +11,12 @@ class createContactTable extends Migration
      */
     public function up()
     {
-        Schema::create('contact', function (Blueprint $table) {
-            $table->id_contact();
+        Schema::create('contact_laravel', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('id_contact');
+            $table->foreign('id_contact')->references('id')->on('contact');
             $table->string('first_name_contact');
             $table->string('last_name_contact');
-            $table->string('email_contact');
             $table->string('email_contact')->unique();
             $table->string('phone_contact');
             $table->timestamps();
